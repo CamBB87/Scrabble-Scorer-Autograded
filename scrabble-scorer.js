@@ -32,19 +32,9 @@ function oldScrabbleScorer(word) {
 // your job is to finish writing these functions and variables that we've named //
 // don't change the names or your program won't work as expected. //
 
-
-// function cleanWord(word) { 
-//    return word.replace(` `, ``).toUpperCase();
-// };
-
 function cleanWord(word) { 
    let cleanWord = '';
-   for (let i in word) {
-      const char = word[i];
-      if ((word[i] >= 'a' && word[i]<= 'z') || (word[i] >= 'A' && word[i] <= 'Z')) {
-        cleanWord += word[i];
-      }
-    }
+   cleanWord = word.replace(` `, ``)
    return cleanWord.toUpperCase();
 };
 
