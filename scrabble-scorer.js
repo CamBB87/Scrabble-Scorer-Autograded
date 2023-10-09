@@ -79,8 +79,8 @@ function scorerPrompt(userInput) {
    console.log(`Which scoring algorithm would you like to use?\n\n`);
    console.log(`0 - Simple: One point per character\n1 - Vowel Bonus: Vowels are worth 3 points\n2 - Scrabble: Uses scrabble point system`)
    let userNum = input.question(`Enter 0, 1, 2: `);
-   if ('0' <= userNum <= '3') {
-      scoreOption = `your word was ${userInput}, with a score of:\n${scoringAlgorithms[userNum].scoreFunc(userInput)}`;
+   if (userNum === '0' || userNum === `1` || userNum === `2`) {
+      scoreOption = `your word was: ${userInput}, with a score of:\n${scoringAlgorithms[userNum].scoreFunc(userInput)}`;
    } else {
       scoreOption = `invalid input please try inputing a value from 0-2.`;
    };
@@ -90,42 +90,20 @@ function scorerPrompt(userInput) {
 };
 
 function transform(obj) {
-   let newObject = null;
-   for (let x in oldPointStructure) {
-      
+   let newObject = {};
+   let key = ``;
+   for (let i in obj) {
+      key = Object.keys(obj)
+      key = key[i]
+      for (let j in obj[i]) {
+         newObject[obj[i][j]] = key
+      }
    }
    return newObject;
 };
 
-let newPointStructure = {
-   a: 1,
-   b: 3,
-   c: 3,
-   d: 2,
-   e: 1,
-   f: 4,
-   g: 2,
-   h: 4,
-   i: 1,
-   j: 8,
-   k: 5,
-   l: 1,
-   m: 3,
-   n: 1,
-   o: 1,
-   p: 3,
-   q: 10,
-   r: 1,
-   s: 1,
-   t: 1,
-   u: 1,
-   v: 4,
-   w: 4,
-   x: 8,
-   y: 4,
-   z: 10
-};
-
+let newPointStructure = transform(oldPointStructure)
+console.log(newPointStructure);
 function runProgram() {
    let userInput = initialPrompt();
    scorerPrompt(userInput);
