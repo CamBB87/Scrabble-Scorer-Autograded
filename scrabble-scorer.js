@@ -34,7 +34,7 @@ function oldScrabbleScorer(word) {
 
 function cleanWord(word) { 
    let cleanWord = '';
-   cleanWord = word.replace(` `, ``)
+   cleanWord = word.replace(` `, ``);
    return cleanWord.toUpperCase();
 };
 
@@ -85,20 +85,19 @@ function scorerPrompt(userInput) {
       scoreOption = `invalid input please try inputing a value from 0-2.`;
    };
    console.log(scoreOption);
-   
    return scoreOption;
 };
 
 function transform(obj) {
    let newObject = {};
-   let key = ``;
    for (let i in obj) {
-      key = Object.keys(obj)
-      key = key[i]
+      let key = [];
+      key = Object.keys(obj);
+      key = key[i];
       for (let j in obj[i]) {
-         newObject[obj[i][j]] = key
-      }
-   }
+         newObject[obj[i][j]] = key;
+      };
+   };
    return newObject;
 };
 
