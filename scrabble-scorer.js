@@ -34,7 +34,7 @@ function oldScrabbleScorer(word) {
 let newPointStructure = transform(oldPointStructure);
 function cleanWord(word) { 
    let cleanWord = '';
-   cleanWord = word.replace(` `, ``)
+   cleanWord = word.replace(` `, ``);
    return cleanWord.toUpperCase();
 };
 
@@ -97,7 +97,6 @@ function scorerPrompt(userInput) {
       scoreOption = `invalid input please try inputing a value from 0-2.`;
    };
    console.log(scoreOption);
-   
    return scoreOption;
 };
 
