@@ -85,10 +85,10 @@ function scrabbleScorer(word) {
    for (i = 0; i < word.length; i++) {
       for (let letter in newPointStructure) {
          if (letter.includes(word[i])) {
-            score += newPointStructure[letter]
-         }
-      }
-   }
+            score += newPointStructure[letter];
+         };
+      };
+   };
    return score;
 };
 
